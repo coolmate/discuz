@@ -12,7 +12,7 @@ services:
 #    ports:
 #      - 3306
     volumes:
-      - ../dev-ops-repo/mysql:/var/lib/mysql
+      - ./dev-ops-repo/mysql:/var/lib/mysql
     environment:
       - TZ=${TIME_ZONE}
       - MYSQL_ROOT_PASSWORD=root
@@ -32,10 +32,10 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ../dev-ops-repo/discuz/config:/var/www/html/config
-      - ../dev-ops-repo/discuz/data:/var/www/html/data
-      - ../dev-ops-repo/discuz/uc_client/data:/var/www/html/uc_client/data
-      - ../dev-ops-repo/discuz/uc_server/data:/var/www/html/uc_server/data
+      - ./dev-ops-repo/discuz/config:/var/www/html/config
+      - ./dev-ops-repo/discuz/data:/var/www/html/data
+      - ./dev-ops-repo/discuz/uc_client/data:/var/www/html/uc_client/data
+      - ./dev-ops-repo/discuz/uc_server/data:/var/www/html/uc_server/data
     environment:
       - TZ=${TIME_ZONE}
     depends_on:
